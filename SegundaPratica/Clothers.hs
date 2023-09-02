@@ -1,18 +1,16 @@
-module Clothers where
-
-main :: IO ()
+main :: IO()
 main = do
     firstTrajes <- getLine
     secondTrajes <- getLine
     let arrayFirstTrajes = read firstTrajes :: [String]
     let arraySecondTrajes = read secondTrajes :: [String]
-    let combinacao = repassTraje arrayFirstTrajes arraySecondTrajes
-    putStrLn combinacao
-
+    let conbine = repassTraje arrayFirstTrajes arraySecondTrajes
+    putStrLn conbine
+    
 repassTraje :: [String] -> [String] -> String
 repassTraje [] trajes = ""
-repassTraje (a : as) trajes = combineTrajes a trajes ++ repassTraje as trajes
+repassTraje (a:as) trajes = combineTrajes a trajes ++ repassTraje as trajes
 
 combineTrajes :: String -> [String] -> String
-combineTrajes roupa [] = ""
-combineTrajes roupa (a : as) = roupa ++ " " ++ a ++ "\n" ++ combineTrajes roupa as
+combineTrajes clothe [] = ""
+combineTrajes clothe (a:as) = clothe ++ " " ++ a ++ "\n" ++ combineTrajes clothe as
